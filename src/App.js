@@ -1,26 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-import ListDisplay from "./component/ListDisplay";
-import InputText from "./component/InputText";
+import Input from "./component/Input";
 
-const App = () => {
-  const [items, setItems] = useState(["orange", "apples", "wine"]);
-
+export default function App() {
   return (
-    <div id="list-container">
-      <ListDisplay
-        items={items}
-        handleClick={item => {
-          setItems(items.slice().filter(i => i !== item));
-        }}
-      />
-      <InputText
-        handleSubmit={item => {
-          setItems(items.concat(item));
-        }}
-      />
-    </div>
-  );
-};
+    <div className="container">
+      <Input />
+    </div>);
+}
 
-export default App;
